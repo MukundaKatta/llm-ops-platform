@@ -1,31 +1,64 @@
-# llm-ops-platform
+# Llm Ops Platform
 
-**LLMOps — prompt versioning, evaluation, A/B testing**
+LLMOps — prompt versioning, evaluation, A/B testing
 
-## Install
+## Features
+
+- Api
+Deployment - Ab Testing
+Deployment - Canary
+Evaluation - Metrics
+Evaluation - Pipeline
+Monitoring - Logger
+Prompts - Template Engine
+Prompts - Version Control
+
+## Tech Stack
+
+- **Language:** Python
+- **Framework:** FastAPI
+- **Key Dependencies:** pydantic,fastapi,uvicorn,anthropic,openai,numpy
+- **Containerization:** Docker + Docker Compose
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.11+
+- Docker & Docker Compose (optional)
+
+### Installation
+
 ```bash
-pip install -e '.[dev]'
+git clone https://github.com/MukundaKatta/llm-ops-platform.git
+cd llm-ops-platform
+pip install -r requirements.txt
 ```
 
-## Quick Start
-```python
-from src import __version__
+### Running
+
+```bash
+uvicorn app.main:app --reload
 ```
 
-## Modules
-- **version_control**
-- **template_engine**
-- **pipeline**
-- **metrics**
-- **ab_testing**
-- **canary**
-- **logger**
-- **api**
+### Docker
 
-## Docker
 ```bash
-docker compose up
+docker-compose up
+```
+
+## Project Structure
+
+```
+llm-ops-platform/
+├── src/           # Source code
+├── tests/         # Test suite
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
 ```
 
 ## License
-(c) 2026 Officethree Technologies. All Rights Reserved.
+
+MIT
