@@ -1,64 +1,43 @@
-# Llm Ops Platform
+# llm-ops-platform
 
-LLMOps — prompt versioning, evaluation, A/B testing
+**Platform for deploying, monitoring, and managing LLMs in production**
 
-## Features
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
-- Api
-Deployment - Ab Testing
-Deployment - Canary
-Evaluation - Metrics
-Evaluation - Pipeline
-Monitoring - Logger
-Prompts - Template Engine
-Prompts - Version Control
-
-## Tech Stack
-
-- **Language:** Python
-- **Framework:** FastAPI
-- **Key Dependencies:** pydantic,fastapi,uvicorn,anthropic,openai,numpy
-- **Containerization:** Docker + Docker Compose
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.11+
-- Docker & Docker Compose (optional)
-
-### Installation
-
+## Install
 ```bash
-git clone https://github.com/MukundaKatta/llm-ops-platform.git
-cd llm-ops-platform
-pip install -r requirements.txt
+pip install -e ".[dev]"
 ```
 
-### Running
+## Quick Start
+```python
+from src.core import LlmOpsPlatform
+ instance = LlmOpsPlatform()
+r = instance.detect(input="test")
+```
 
+## CLI
 ```bash
-uvicorn app.main:app --reload
+python -m src status
+python -m src run --input "data"
 ```
 
-### Docker
+## API
+| Method | Description |
+|--------|-------------|
+| `detect()` | Detect |
+| `scan()` | Scan |
+| `monitor()` | Monitor |
+| `alert()` | Alert |
+| `get_report()` | Get report |
+| `configure()` | Configure |
+| `get_stats()` | Get stats |
+| `reset()` | Reset |
 
+## Test
 ```bash
-docker-compose up
-```
-
-## Project Structure
-
-```
-llm-ops-platform/
-├── src/           # Source code
-├── tests/         # Test suite
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
+pytest tests/ -v
 ```
 
 ## License
-
-MIT
+(c) 2026 Officethree Technologies. All Rights Reserved.
